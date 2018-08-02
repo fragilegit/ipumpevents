@@ -225,7 +225,7 @@ return [
         'Markdown' => GrahamCampbell\Markdown\Facades\Markdown::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'Laratrust'   => Laratrust\LaratrustFacade::class,
-        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        // 'Debugbar' => Barryvdh\Debugbar\Facade::class,
 
 
 
