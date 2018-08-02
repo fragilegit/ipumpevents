@@ -10,6 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+if (env('APP_ENV') === 'production') {
+    URL::forceSchema('https');
+}
 
 Route::get('/', 'HomeController@index')->name('event.home'); 
 Route::get('/events/{slug}', 'EventController@show')->name('event.slug')->where('slug', '[\w\d\-\_ ]+');
