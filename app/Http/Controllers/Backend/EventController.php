@@ -49,7 +49,7 @@ class EventController extends BackendController
                 $eventCount = Event::draft()->count();
             }elseif($status == 'own'){
     
-                $events = $request->user()->events()->with('category', 'user')->latest()->paginate($this->limit);
+                $events = $request->user()->events()->published()->with('category', 'user')->latest()->paginate($this->limit);
                 $eventCount = $request->user()->events()->count();
                 
             }else{
@@ -136,7 +136,7 @@ class EventController extends BackendController
 
     public function statusListAdmin($request){
         return [
-            'own' => $request->user()->events()->count(),
+            'own' => $request->user()->events()->published()->count(),
             'all' => Event::count(),
             'published' => Event::published()->count(),
             'scheduled' => Event::scheduled()->count(),

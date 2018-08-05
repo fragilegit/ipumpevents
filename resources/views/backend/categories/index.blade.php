@@ -27,7 +27,7 @@
         <section class="content">
             <div class="row">
               <div class="col-xs-12">
-                <div class="box">
+                <div class="box box-info">
                     <div class="box-header clearfix">
                         <div class="pull-left">
                             <a href="{{ route('categories.create') }}" class="btn btn-success"><i class="fa fa-plus"></i> Add New</a>

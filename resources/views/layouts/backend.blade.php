@@ -38,7 +38,7 @@
         <![endif]-->
     </head>
     {{-- sidebar-collapse --}}
-    <body class="hold-transition skin-blue  sidebar-mini">
+    <body class="hold-transition skin-purple  sidebar-mini">
         <div class="row">
                 <div class="col-sm-12 alert-warning container z-index">
                     Website is under testing, some functions are under development!
@@ -65,7 +65,7 @@
         <!-- AdminLTE App -->
         <script src="{{ asset('backend/js/adminlte.min.js') }}"></script>
         <!-- AdminLTE for demo purposes -->
-        <script src="{{ asset('backend/js/demo.js') }}"></script>
+        {{-- <script src="{{ asset('backend/js/demo.js') }}"></script> --}}
         <!-- scripts -->
         <script src="{{ asset('backend/js/custom.js') }}"></script>
         @yield('script')
