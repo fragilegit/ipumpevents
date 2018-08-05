@@ -2,7 +2,7 @@
 
 return [
     'image' => [
-        'directory' => 'storage\event_image',
+        'directory' => 'storage/videos',
         'thumbnail' => [
             'width' => 250,
             'height' => 170

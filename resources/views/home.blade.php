@@ -22,7 +22,7 @@
                     <div class="card">
                         @if(isset($event->event_image))
                             {{-- <img class="card-img-top" src="{{ $event->image_thumb_url }}" alt="{{ $event->event_name }}"> --}}
-                            <img class="card-img-top" src="public/storage/event_image/Event_image_1.jpg" alt="{{ $event->event_name }}">
+                            <img class="card-img-top" src="storage/event_image/Event_image_1.jpg" alt="{{ $event->event_name }}">
                         @endif
                        {{-- <div class="card-body">
                              <h2 class="card-title">
