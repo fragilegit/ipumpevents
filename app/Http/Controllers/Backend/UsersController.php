@@ -33,8 +33,8 @@ class UsersController extends BackendController
     public function store(Requests\UserStoreRequest $request)
     {   
         $request->except(['role']);
-        $request->except(['slug']);
-        $data = $request->except(['slug']);
+        // $request->except(['slug']);
+        $data = $request->except(['role']);
         
         $data['password'] = bcrypt($data['password']);
         $user = User::create($data);

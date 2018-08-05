@@ -72,4 +72,4 @@
         </div>
         <!-- /.box -->
 </div>
-  
+@include('backend.users.script')

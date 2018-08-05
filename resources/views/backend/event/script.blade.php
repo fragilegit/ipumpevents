@@ -18,9 +18,9 @@
                                 
                 slugInput.val(theSlug);
         });
-        CKEDITOR.replace( 'article-ckeditor' );   
-        
+        CKEDITOR.replace( 'article-ckeditor' );
         var simplemde = new SimpleMDE({ element: $("#excerpt")[0] });
+         
 
         $('#datetimepicker1').datetimepicker({
             format: 'YYYY-MM-DD HH:mm:ss',
