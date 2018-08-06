@@ -4,8 +4,9 @@
     <!-- mini logo for sidebar mini 50x50 pixels -->
     <span class="logo-mini"><b>iP</b>E</span>
     <!-- logo for regular state and mobile devices -->
-    <span class="logo-lg"><b>IPump</b>Events</span>
+    <span class="logo-lg">{{ config('app.name', 'Laravel') }}</span>
   </a>
+  {{-- <b>IPump</b>Events --}}
   <!-- Header Navbar: style can be found in header.less -->
   <nav class="navbar navbar-static-top">
    
