@@ -17,7 +17,8 @@
                             <div class="card">
                                 @if($event->event_image)
                                     <a href="{{ route('events.show', $event->slug) }}">
-                                        <img class="card-img-top" src="{{ $event->image_thumb_url }}" alt="Card image cap">
+                                        {{-- <img class="card-img-top" src="{{ $event->image_thumb_url }}" alt="Card image cap"> --}}
+                                        <img class="card-img-top" src="{{ $event->image_url }}" alt="Card image cap">
                                     </a>
                                 @endif
                                 <div class="card-body">
