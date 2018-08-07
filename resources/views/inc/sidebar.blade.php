@@ -40,7 +40,8 @@
                         @if($event->image_thumb_url)
                         <div class="post-image">
                             <a href="{{ route('events.show', $event->slug) }}">
-                                <img src="{{ $event->image_thumb_url }}" />
+                                {{-- <img src="{{ $event->image_thumb_url }}" /> --}}
+                                <img src="{{ $event->image_url }}" />
                             </a>
                         </div>
                         @endif
