@@ -190,7 +190,7 @@ class EventController extends BackendController
                 ->resize($width,$height)
                 ->save($destination.'/'.$thumbnail);
                 if(env('APP_ENV') !== 'local') {
-                    Storage::disk('s3')->put('images/'.$thumbnail, fopen($request->file('event_image'), 'r+'), 'public'); 
+                    // Storage::disk('s3')->put('images/'.$thumbnail, fopen($request->file('event_image'), 'r+'), 'public'); 
                 }
             }
 
