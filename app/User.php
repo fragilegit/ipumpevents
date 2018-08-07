@@ -41,7 +41,7 @@ class User extends Authenticatable
 
     public function gravatar(){
         $email = $this->email;
-        $default = "http://bigbang.lefigaro.fr/wp-content/uploads/sites/18/2016/05/avatar.png";
+        $default = "https://bigbang.lefigaro.fr/wp-content/uploads/sites/18/2016/05/avatar.png";
         $size = 40;
 
         return "https://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . "?d=" . urlencode( $default ) . "&s=" . $size;

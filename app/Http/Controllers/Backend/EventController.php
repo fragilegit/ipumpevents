@@ -7,6 +7,7 @@ use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests;
+use Illuminate\Support\Facades\Storage;
 use Validator;
 use App\Event;
 use Calendar;
@@ -147,7 +148,6 @@ class EventController extends BackendController
 
     public function create(Event $event)
     {
-
         return view('backend.event.create', compact('event'));
     }
 
@@ -173,6 +173,9 @@ class EventController extends BackendController
             $extension = $image->getClientOriginalExtension();
             $fileName = $fileName.'_'.time().'.'.$extension; 
             $destination = $this->imagePath;
+            if(env('APP_ENV') !== 'local') {
+                Storage::disk('s3')->put('images/'.$fileName, fopen($request->file('event_image'), 'r+'), 'public');
+            }
 
             $successUpload = $image->move($destination, $fileName);
 
@@ -185,7 +188,10 @@ class EventController extends BackendController
                 $thumbnail = str_replace(".{$extension}", "_thumb.{$extension}", $fileName);
                 Image::make($destination.'/'. $fileName)
                 ->resize($width,$height)
-                ->save($destination.'/'.$thumbnail);   
+                ->save($destination.'/'.$thumbnail);
+                if(env('APP_ENV') !== 'local') {
+                    Storage::disk('s3')->put('images/'.$thumbnail, fopen($request->file('event_image'), 'r+'), 'public'); 
+                }
             }
 
             $data['event_image'] = $fileName;
@@ -318,6 +324,8 @@ class EventController extends BackendController
 
             if(file_exists($imagePath)) unlink($imagePath);
             if(file_exists($thumbnailPath)) unlink($thumbnailPath);
+            Storage::disk('s3')->delete($image);
+            Storage::disk('s3')->delete($thumbnail);
         }
     }
 

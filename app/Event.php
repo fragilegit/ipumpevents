@@ -107,7 +107,15 @@ class Event extends Model
             $directory = config('cms.image.directory');
             $imagePath = public_path() . "/{$directory}/" . $this->event_image;
 
-            if(file_exists($imagePath)) $imageUrl  = asset("{$directory}/" . $this->event_image);
+            if(env('APP_ENV') === 'local') {
+                
+                if(file_exists($imagePath)) $imageUrl  = asset("{$directory}/" . $this->event_image);
+            }
+
+            $s3Directory = config('cms.s3-image.directory');
+            $imageUrl = $s3Directory.$this->event_image;
+
+            
         }
  
         return $imageUrl;
@@ -120,12 +128,19 @@ class Event extends Model
         if( ! is_null($this->event_image)){
 
             $directory = config('cms.image.directory');
+           
             $ext = substr(strchr($this->event_image, '.'), 1); 
             $thumbnail = str_replace(".{$ext}", "_thumb.{$ext}", $this->event_image);
 
-            $imagePath = public_path() . "/{$directory}/" . $thumbnail;
+            if(env('APP_ENV') === 'local') {
+                
+                $imagePath = public_path() . "/{$directory}/" . $thumbnail;
+                if(file_exists($imagePath)) $imageUrl  = asset("{$directory}/" . $thumbnail);
+            }
 
-            if(file_exists($imagePath)) $imageUrl  = asset("{$directory}/" . $thumbnail);
+            $s3Directory = config('cms.s3-image.directory');
+            $imageUrl = $s3Directory.$thumbnail;
+            
         }
 
         return $imageUrl;

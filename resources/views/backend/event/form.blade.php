@@ -31,7 +31,7 @@
                 </div>
                 <div class="form-group {{ $errors->has('description') ? 'has-error' : ''}}">
                     {!! Form::label('description') !!}
-                    {!! Form::textarea('description', null, ['id'=>'article-ckeditor','class' => 'form-control']) !!}
+                    {!! Form::textarea('description', null, ['id'=>'description','class' => 'form-control']) !!}
                     {!! $errors->first('description', '<p class="help-block">:message</p>') !!}
                 </div>
                 
@@ -116,7 +116,7 @@
                 <br>
                 <div class="fileinput fileinput-new" data-provides="fileinput">
                     <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-                        <img src="{{ ($event->image_thumb_url) ? $event->image_thumb_url : 'http://placehold.it/200x150$text=No+Image' }}" alt="...">
+                        <img src="{{ ($event->image_thumb_url) ? $event->image_thumb_url : 'https://placehold.it/200x150$text=No+Image' }}" alt="...">
                         {{-- <img src="/storage/event_image/{{ $event->event_image }}" alt="..."> --}}
                     </div>
                     <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>

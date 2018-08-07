@@ -42,7 +42,7 @@
                     <h2 class="card-title">
                         <a href="{{ route('events.show', $event->slug) }}">{{$event->event_name}}</a>
                     </h2>
-                    <p class="card-text">{{ $event->excerpt }}</p>
+                    <p class="card-text">{!! $event->excerpt !!}</p>
                     <p class="card-text">{!! $event->description !!}</p>
                 </div>
                 
@@ -100,22 +100,36 @@
 @section('script')
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyATj3nXIlTh6atBzhuGuCiuM8sPtU5bw&callback=initMap" async defer></script>
 <script type="text/javascript">
-    
+
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip(); 
+    });
     function initMap(){
-        var lat = {{$event->lat}};
-        var lng = {{$event->lng}};
+        var lat = {{ $event->lat }};
+        var lng = {{ $event->lng }};
+        var event_name = "{{ $event->event_name }}";
 
         map = new google.maps.Map(document.getElementById('map-canvas'),{
         center: {lat: lat, lng: lng},
         zoom: 15
     });
+    var contentString ='<a href="#" data-toggle="tooltip" title="Hooray!">'+ event_name +'</a>';
+    var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
     marker = new google.maps.Marker({
         position:{
             lat: lat,
             lng: lng
         },
-        map:map
+        map:map,
+        title: event_name
     });
+
+    marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
     }
 </script>
 @endsection

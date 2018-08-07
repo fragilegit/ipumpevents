@@ -12,7 +12,7 @@ Class NavigationComposer{
     public function compose(View $view){
         $this->composeCategories($view);
         $this->composeTags($view);
-        $this->composeArchives($view);
+        // $this->composeArchives($view);
         $this->composePopularEvents($view);
     }
 
@@ -28,11 +28,11 @@ Class NavigationComposer{
 
         $view->with('tags', $tags);
     }
-    private function composeArchives(View $view){
-        $archives = Event::archives();
+    // private function composeArchives(View $view){
+    //     $archives = Event::archives();
 
-        $view->with('archives', $archives);
-    }
+    //     $view->with('archives', $archives);
+    // }
 
     private function composePopularEvents(View $view){
 

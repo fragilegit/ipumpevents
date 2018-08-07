@@ -18,8 +18,10 @@
                                 
                 slugInput.val(theSlug);
         });
-        CKEDITOR.replace( 'article-ckeditor' );
-        var simplemde = new SimpleMDE({ element: $("#excerpt")[0] });
+        CKEDITOR.replace( 'excerpt' );
+        CKEDITOR.replace( 'description' );
+        // var excerpt = new SimpleMDE({ element: $("#excerpt")[0] });
+        // var description = new SimpleMDE({ element: $("#description")[0] });
          
 
         $('#datetimepicker1').datetimepicker({

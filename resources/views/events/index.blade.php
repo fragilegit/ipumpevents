@@ -17,14 +17,14 @@
                             <div class="card">
                                 @if($event->event_image)
                                     <a href="{{ route('events.show', $event->slug) }}">
-                                        <img class="card-img-top" src="{{ $event->image_url }}" alt="Card image cap">
+                                        <img class="card-img-top" src="{{ $event->image_thumb_url }}" alt="Card image cap">
                                     </a>
                                 @endif
                                 <div class="card-body">
                                     <h2 class="card-title">
                                         <a href="{{ route('events.show', $event->slug) }}">{{$event->event_name}}</a>
                                     </h2>
-                                    <p class="card-text">{{ $event->excerpt }}</p>
+                                    <p class="card-text">{!! $event->excerpt !!}</p>
                                 </div>
                                 
                                 <div class="card-footer post-meta clearfix">
