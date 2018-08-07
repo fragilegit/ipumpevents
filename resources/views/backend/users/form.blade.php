@@ -1,5 +1,5 @@
 <div class="col-xs-12 col-md-8 col-lg-9">
-        <div class="box">
+        <div class="box box-primary">
             <div class="box-header">
                 <div class="pull-left">
                     @if (Session::has('success'))
