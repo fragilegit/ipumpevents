@@ -54,6 +54,7 @@
                             <li><i class="fa fa-folder"></i><a href="{{ route('category', $event->category->slug) }}"> {{ $event->category->title }}</a></li>
                             {{-- <li><i class="fa fa-tag"></i> {!! $event->tags_html !!}</li> --}}
                             {{-- <li><i class="fa fa-comments"></i><a href="#">4 Comments</a></li> --}}
+                            <li><i class="fa fa-calendar"></i><span>{{ $event->startDateFormatted(true) }}</span></li>
                         </ul></small>
                     </div>
                     <div class="pull-right">

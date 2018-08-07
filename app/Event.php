@@ -56,9 +56,9 @@ class Event extends Model
     
     public function startDateFormatted($showTimes = false ){
         $format = "d/m/Y";
-        if($showTimes) $format = $format ."H:i:s";
-        if($this->start_date != null)
-        return $this->start_date;
+        if($showTimes) $format = $format ." H:i:s";
+        if($this->published_at != null)
+        return $this->published_at->format($format);
     }
 
     public function publicationLabel(){
