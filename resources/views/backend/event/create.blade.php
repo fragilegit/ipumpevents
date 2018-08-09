@@ -2,6 +2,7 @@
 
 @section('title', config('app.name').' | Add New Event')
 
+
 @section('content')
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->

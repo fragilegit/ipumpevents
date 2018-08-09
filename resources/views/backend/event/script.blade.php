@@ -1,4 +1,5 @@
-{{-- // console.log('input from form field: '+$('#lat').val()+" , "+$('#lng').val());@section('script') --}}
+{{-- // console.log('input from form field: '+$('#lat').val()+" , "+$('#lng').val()); @section('script') --}}
+@section('script')
 <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
 <script src="{{ asset('/backend/plugins/simple-mde/simplemde.min.js') }}"></script>
