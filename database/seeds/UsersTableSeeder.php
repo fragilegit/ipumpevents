@@ -47,7 +47,7 @@ class UsersTableSeeder extends Seeder
                 ]
             ]);
         }else{
-            $faker = \Faker\Factory::create();
+            // $faker = \Faker\Factory::create();
             DB::table('users')->insert([
                 [
                     'name' => "Shaquille Babb",
