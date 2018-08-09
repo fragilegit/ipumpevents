@@ -1,4 +1,4 @@
-@section('script')
+{{-- // console.log('input from form field: '+$('#lat').val()+" , "+$('#lng').val());@section('script') --}}
 <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
 <script src="{{ asset('/backend/plugins/simple-mde/simplemde.min.js') }}"></script>
@@ -39,7 +39,7 @@
     var map;
     var marker;
     function initMap() {
-        console.log({{ $event->lat }});
+        
         @if(isset($event->lat) && isset($event->lng) && isset($newstring) != 'show')
             var lat = {{$event->lat}}
             var lng = {{$event->lng}}
@@ -79,7 +79,7 @@
                 $('#lat').val(lat);
                 $('#lng').val(lng);
 
-                console.log('input from form field: '+$('#lat').val()+" , "+$('#lng').val());
+                
             });
         @else
         

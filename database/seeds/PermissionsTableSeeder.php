@@ -13,8 +13,10 @@ class PermissionsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('tags')->delete();
-
+        // DB::table('permissions')->delete();
+        // DB::table('permissions')->truncate();
+        DB::statement("TRUNCATE permissions RESTART IDENTITY CASCADE");
+        
         $crudEvent = new Permission();
         $crudEvent->name = "crud-event";
         $crudEvent->save();

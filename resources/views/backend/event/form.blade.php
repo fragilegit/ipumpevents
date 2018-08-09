@@ -77,10 +77,10 @@
         </div>
         <div class="box-footer">
             <div class="pull-left">
-                <a id="draft-btn" class="btn btn-default">Save Draft</a>
+                {!! Form::submit('Save Draft', ['id' => 'draft-btn', 'class' => 'btn btn-default', 'name' => 'event_option', 'value' => 'draft'] ) !!}
             </div>
             <div class="pull-right">
-                {!! Form::submit('Publish', ['class' => 'btn btn-primary']) !!}
+                {!! Form::submit('Publish', ['class' => 'btn btn-primary', 'name' => 'event_option', 'value' => 'publish']) !!}
             </div>
         </div>
         {{-- /.box-body --}}
@@ -116,7 +116,7 @@
                 <br>
                 <div class="fileinput fileinput-new" data-provides="fileinput">
                     <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-                        <img src="{{ ($event->image_thumb_url) ? $event->image_thumb_url : 'https://placehold.it/200x150$text=No+Image' }}" alt="...">
+                        <img src="{{ ($event->image_thumb_url) ? $event->image_url : 'https://placehold.it/200x150$text=No+Image' }}" alt="...">
                         {{-- <img src="/storage/event_image/{{ $event->event_image }}" alt="..."> --}}
                     </div>
                     <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>

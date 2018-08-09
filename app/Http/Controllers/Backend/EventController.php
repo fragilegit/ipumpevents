@@ -163,8 +163,15 @@ class EventController extends BackendController
     }
 
     private function handleRequest($request){
+        // $eventOption  = $request->event_option;
         $data = $request->all();
 
+        // if($eventOption == 'draft'){
+        //     $data = $request->except(['published_at']);
+        // }elseif($eventOption == 'publish'){
+        //     $data = $request->all();
+        // }
+        
         if($request->hasFile('event_image')){
         
             $image = $request->file('event_image');

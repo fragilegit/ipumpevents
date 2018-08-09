@@ -13,16 +13,16 @@ class UsersTableSeeder extends Seeder
     {
         //reset the users table
 
-        // DB::statement('SET FOREIGN_KEY_CHECKS=0');
-        // DB::table('users')->truncate();
-        DB::table('users')->delete();
-
-        
+            // DB::statement('SET FOREIGN_KEY_CHECKS=0');
+            // DB::table('users')->delete();
+            // DB::table('users')->truncate();
+        DB::statement("TRUNCATE users RESTART IDENTITY CASCADE");
 
         if(env('APP_ENV') === 'local'){
             
             $faker = \Faker\Factory::create();
 
+            //finals
             DB::table('users')->insert([
                 [
                     'name' => "Shaquille Babb",
@@ -47,6 +47,7 @@ class UsersTableSeeder extends Seeder
                 ]
             ]);
         }else{
+            $faker = \Faker\Factory::create();
             DB::table('users')->insert([
                 [
                     'name' => "Shaquille Babb",
@@ -54,6 +55,27 @@ class UsersTableSeeder extends Seeder
                     'email' => "shaqbabb@yahoo.com",
                     'password' => bcrypt('secret'),
                     'bio' => "Super Admin - Web Developer for iPumpEvents"
+                ],
+                [
+                    'name' => 'Stacey Williams',
+                    'slug' => 'stacey-williams',
+                    'email' => 'stacey@costaatt.edu.tt',
+                    'password' => bcrypt('finals'),
+                    'bio' => $faker->text(rand(250, 300))
+                ],
+                [
+                    'name' => 'Roger Chung',
+                    'slug' => 'roger-chung',
+                    'email' => 'roger@costaatt.edu.tt',
+                    'password' => bcrypt('finals'),
+                    'bio' => $faker->text(rand(250, 300))
+                ],
+                [
+                    'name' => 'Edward Cameron',
+                    'slug' => 'edward-cameron',
+                    'email' => 'edward@costaatt.edu.tt',
+                    'password' => bcrypt('finals'),
+                    'bio' => $faker->text(rand(250, 300))
                 ]
             ]);
         }

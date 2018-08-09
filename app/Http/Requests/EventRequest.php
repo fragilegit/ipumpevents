@@ -30,9 +30,12 @@ class EventRequest extends FormRequest
             'category_id' => 'required',
             'event_image' => 'mimes:jpg,jpeg,bmp,png',
             'lat' => 'nullable',
-            'lng' => 'nullable'
+            'lng' => 'nullable',
+            
         ];
-
+        if (empty($request->published_at)) {
+            unset($rules['published_at']);
+        }
         switch($this->method()){
             case 'PUT':
             case 'PATCH': 

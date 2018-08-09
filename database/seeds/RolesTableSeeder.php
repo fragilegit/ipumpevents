@@ -14,7 +14,8 @@ class RolesTableSeeder extends Seeder
     public function run()
     {
 
-        DB::table('tags')->delete();
+        // DB::table('roles')->delete();
+        DB::statement("TRUNCATE roles RESTART IDENTITY CASCADE");
         //create admin role
         $admin = new Role();
         $admin->name = "admin";
@@ -38,6 +39,19 @@ class RolesTableSeeder extends Seeder
         $user1 = User::first();
         $user1->detachRole($admin);
         $user1->attachRole($admin);
+
+        //for final presentations
+        $user2 = User::find(2);
+        $user2->detachRole($admin);
+        $user2->attachRole($admin);
+
+        $user3 = User::find(3);
+        $user3->detachRole($author);
+        $user3->attachRole($author);
+
+        $user4 = User::find(4); 
+        $user4->detachRole($author);
+        $user4->attachRole($author);
 
         if(env('APP_ENV') === 'local'){
             $user2 = User::find(2);
