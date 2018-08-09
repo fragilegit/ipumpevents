@@ -11,7 +11,7 @@ Class NavigationComposer{
 
     public function compose(View $view){
         $this->composeCategories($view);
-        $this->composeTags($view);
+        // $this->composeTags($view);
         // $this->composeArchives($view);
         $this->composePopularEvents($view);
     }

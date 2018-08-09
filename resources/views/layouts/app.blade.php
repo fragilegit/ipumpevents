@@ -36,13 +36,13 @@
     <div class="preloader-background">
         <i class="fa fa-spinner fa-pulse fa-spin fa-4x fa-lg" color="#3F729B" aria-hidden="true"></i>
     </div>
-    <div class="container-fluid">
+    {{-- <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12 alert-warning z-index">
                 Website is under testing, some functions are under development!
             </div>
         </div>
-    </div>
+    </div> --}}
     
     @include('inc.navbar')
     <div id="app" class="">

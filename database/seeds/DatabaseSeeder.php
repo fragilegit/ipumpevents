@@ -20,9 +20,10 @@ class DatabaseSeeder extends Seeder
         $this->call(EventsTableSeeder::class);
         $this->call(RolesTableSeeder::class);
         $this->call(PermissionsTableSeeder::class);
-        $this->call(TagsTableSeeder::class);
+        // $this->call(TagsTableSeeder::class);
 
         }else{
+
             $this->call(UsersTableSeeder::class);
             $this->call(RolesTableSeeder::class);
             $this->call(PermissionsTableSeeder::class);

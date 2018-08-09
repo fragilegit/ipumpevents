@@ -39,11 +39,11 @@
     </head>
     {{-- sidebar-collapse --}}
     <body class="hold-transition skin-purple  sidebar-mini">
-        <div class="row">
+        {{-- <div class="row">
                 <div class="col-sm-12 alert-warning container z-index">
                     Website is under testing, some functions are under development!
                 </div>
-            </div>
+        </div> --}}
         <div class="preloader-background">
             <i class="fa fa-spinner fa-pulse fa-spin fa-4x fa-lg" color="#3F729B" aria-hidden="true"></i>
         </div>
