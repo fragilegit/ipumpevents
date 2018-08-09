@@ -21,7 +21,7 @@ class EventsTableSeeder extends Seeder
         DB::table('events')->truncate();
     //generate 20 events
         $events = [];
-        $faker = Factory::create();
+        // $faker = Factory::create();
        $date = Carbon::create(2018, 6, 4, 9);
         // $date = Carbon::now()->modify('-1 year');
        
