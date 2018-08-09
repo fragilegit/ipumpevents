@@ -13,7 +13,10 @@ class EventsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        // 'event title '.$i
+        // 'event description '.$i
+        // 'event excerpt '.$i
+        // str_slug('event slug '.$i.'');
         // DB::table('events')->delete();
         DB::table('events')->truncate();
     //generate 20 events
@@ -33,16 +36,16 @@ class EventsTableSeeder extends Seeder
             $events[] = [
                 'created_at' => $createdDate,
                 'updated_at' => $createdDate,
-                'event_name' => $faker->sentence(rand(8, 12)),
+                'event_name' => 'event title '.$i,
                 'start_date' => $date,
                 'end_date' => $date,
-                'description' => $faker->paragraph(rand(10,15)),
+                'description' => 'event description '.$i,
                 'event_image' => rand(0, 1) == 1 ? $image : NULL,
                 'lat' => rand(10, 100),
                 'lng' => rand(10, 100),
                 'user_id' => rand(1, 4),
-                'slug' => $faker->slug(),
-                'excerpt' => $faker->text(rand(250,300)),
+                'slug' => str_slug('event slug '.$i.''),
+                'excerpt' => 'event excerpt '.$i,
                 'published_at' => $i < 30 ? $publishedDate : ( rand(0, 1) == 0 ? NULL : $publishedDate->addDays(4)),
                 'category_id' => rand(1, 6),
                 'view_count' => rand(1, 10) * 10,

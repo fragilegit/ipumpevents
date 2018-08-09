@@ -12,7 +12,7 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         //reset the users table
-
+            // 'bio' => 'users bio here';
             // DB::statement('SET FOREIGN_KEY_CHECKS=0');
             // DB::table('users')->delete();
             // DB::table('users')->truncate();
@@ -61,21 +61,21 @@ class UsersTableSeeder extends Seeder
                     'slug' => 'stacey-williams',
                     'email' => 'stacey@costaatt.edu.tt',
                     'password' => bcrypt('finals'),
-                    'bio' => $faker->text(rand(250, 300))
+                    'bio' => 'users bio here'
                 ],
                 [
                     'name' => 'Roger Chung',
                     'slug' => 'roger-chung',
                     'email' => 'roger@costaatt.edu.tt',
                     'password' => bcrypt('finals'),
-                    'bio' => $faker->text(rand(250, 300))
+                    'bio' => 'users bio here'
                 ],
                 [
-                    'name' => 'Edward Cameron',
-                    'slug' => 'edward-cameron',
-                    'email' => 'edward@costaatt.edu.tt',
+                    'name' => 'Alicia Dennis-Nagee',
+                    'slug' => 'alicia-dennis-nagee',
+                    'email' => 'alicia@costaatt.edu.tt',
                     'password' => bcrypt('finals'),
-                    'bio' => $faker->text(rand(250, 300))
+                    'bio' => 'users bio here'
                 ]
             ]);
         }
