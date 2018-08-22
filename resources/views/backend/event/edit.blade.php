@@ -24,10 +24,11 @@
         </ol>
     </section>
     
-    {{-- 
+   <?php 
         $string = url()->current();
         $newstring = explode('/', $string);
-        echo $newstring[6];
+        ?>
+        {{--  echo $newstring[6];
      --}}
     <!-- Main content --> 
     <section class="content">
