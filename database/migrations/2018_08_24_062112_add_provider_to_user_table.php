@@ -13,9 +13,9 @@ class AddProviderToUserTable extends Migration
      */
     public function up()
     {
-        Schema::table('user', function (Blueprint $table) {
-            $table->string('provider');
-            $table->string('provider_id'); 
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('provider')->nullable();
+            $table->string('provider_id')->nullable(); 
         });
     }
 
@@ -26,7 +26,7 @@ class AddProviderToUserTable extends Migration
      */
     public function down()
     {
-        Schema::table('user', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('provider');
             $table->dropColumn('provider_id');  
         });
