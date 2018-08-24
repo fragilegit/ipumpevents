@@ -87,6 +87,7 @@ class LoginController extends Controller
 
         return User::create([
             'name' => $user->name,
+            'slug' => str_slug($user->name),
             'email' => $user->email,
             'provider' => $provider,
             'provider_id' => $user->id
