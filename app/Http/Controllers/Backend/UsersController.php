@@ -18,8 +18,10 @@ class UsersController extends BackendController
     {
         $users = User::orderBy('name')->paginate($this->limit);
         $usersCount = User::count();
-
+    
         return view('backend.users.index', compact('users', 'usersCount'));
+
+        // return response()->json($users);
     }
 
     public function create()

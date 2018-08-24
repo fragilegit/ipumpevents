@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Laravel\Socialite\Facades\Socialite;
+use Auth;
+use App\User;
 
 class LoginController extends Controller
 {
@@ -52,25 +54,43 @@ class LoginController extends Controller
     }
 
     /**
-     * Redirect the user to the Facebook authentication page.
+     * Redirect the user to the provider authentication page.
      *
      * @return \Illuminate\Http\Response
      */
-    public function redirectToProvider()
+    public function redirectToProvider($provider)
     {
-        return Socialite::driver('facebook')->redirect();
+        return Socialite::driver($provider)->redirect();
     }
 
     /**
-     * Obtain the user information from Facebook.
+     * Obtain the user information from provider.
      *
      * @return \Illuminate\Http\Response
      */
-    public function handleProviderCallback()
+    public function handleProviderCallback($provider)
     {
-        $user = Socialite::driver('facebook')->user();
-        return $user->name; 
+        $user = Socialite::driver($provider)->user();
 
-        // return $user->token;
+        $authUser = $this->findOrCreateUser($user, $provider);
+        Auth::login($authUser, true);
+
+        return redirect($this->redirectTo); 
+    }
+
+    public function findOrCreateuser($user, $provider){
+
+        $authUser = User::where('provider_id', $user->id)->first();
+        if ($authuser){
+            return $authUser;
+        }
+
+        return User::create([
+            'name' => $user->name,
+            'email' => $user->email,
+            'provider' => $provider,
+            'provider_id' => $user->id
+        ]);
+
     }
 }

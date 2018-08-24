@@ -42,23 +42,9 @@ Route::prefix('dashboard')->group(function(){
     Route::put('edit-account', 'Backend\MainController@update')->name('edit.account');
 }); 
 
-    // Route::get('/', function () {
-    //     return view('welcome');
-    // });
-    // Route::group(['middleware' => ['auth']], function(){
-    //     Route::get('dashboard', 'DashBoardController@index')->name('events.index');
-    //     Route::post('dashboard', 'EventController@store')->name('events.add');
-    // });
-    // Route::post('dashboard', 'DashBoardController@addEvent')->name('events.add');
-    // Route::get('/login', 'Auth\BackendLoginController@showLoginForm')->name('admin.login');
-    // Route::post('/login', 'Auth\BackendLoginController@login')->name('admin.login.submit');
-    // Route::get('event', 'Backend\EventController@index')->name('event.index');
-    // Route::get('event/create', 'Backend\EventController@create')->name('event.create');
-    // Route::get('event/destroy', 'Backend\EventController@destroy')->name('event.destroy');
-    // Route::get('event/{event}', 'Backend\EventController@edit')->name('dashboard.event.edit');
 
 // facebook socialite login
-Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
-Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
+Route::get('auth/{provider}', 'Auth\LoginController@redirectToProvider');
+Route::get('auth/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
 
 
