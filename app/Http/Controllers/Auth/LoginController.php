@@ -85,13 +85,17 @@ class LoginController extends Controller
             return $authUser;
         }
 
-        return User::create([
+        $user = User::create([
             'name' => $user->name,
             'slug' => str_slug($user->name),
             'email' => $user->email,
+            'token' => str_random(25),
             'provider' => $provider,
             'provider_id' => $user->id
         ]);
+        
+        $user->attachRole('author');
 
+        return $user;
     }
 }
