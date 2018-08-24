@@ -36,9 +36,9 @@ return [
     ],
 
     'facebook' => [
-        'client_id' => '237554653678936',         // Your GitHub Client ID
-        'client_secret' => 'e75a4274dad7e9eb12f3e63f483cea0a', // Your GitHub Client Secret
-        'redirect' => 'http://evwebapp.test:82/login/facebook/callback',
+        'client_id' => '237554653678936',         // facebook Client ID
+        'client_secret' => 'e75a4274dad7e9eb12f3e63f483cea0a', // facebook Client Secret
+        'redirect' => 'https://ipumpevents.herokuapp.com/login/facebook/callback',
     ],
 
     // 'facebook' => [
