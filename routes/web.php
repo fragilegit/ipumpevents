@@ -43,7 +43,7 @@ Route::prefix('dashboard')->group(function(){
 }); 
 
 //examples
-Route::get('/zoey', 'HomeController@zoey');
+Route::get('/zoë', 'HomeController@zoe');
 
 // facebook socialite login
 Route::get('auth/{provider}', 'Auth\LoginController@redirectToProvider');

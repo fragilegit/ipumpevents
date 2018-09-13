@@ -22,8 +22,8 @@ class HomeController extends Controller
         return view('home')->with('events', $events);
     }
 
-    public function zoey(){
+    public function zoe(){
         
-        return view('pages.zoey');
+        return view('pages.zoe');
     }
 }
