@@ -34,8 +34,8 @@
                     </button>
                 @else
                 <button type="button" onclick="return false;" class="btn btn-xs btn-danger disabled">
-                        <i class="fa fa-trash"></i>
-                    </button>
+                    <i class="fa fa-trash"></i>
+                </button>
                 @endif
                 {!! Form::close() !!}
                 </td>
@@ -47,7 +47,7 @@
                     {{-- {!! $event->publicationLabel() !!} --}}
                 </td>
                 <td>
-                    <abbr title="{{ $event->dateFormatted(true) }}"> {{ $event->dateFormatted() }}</abbr>
+                    <abbr title="{{ $event->dateFormatted(true) }}"> {{ $even->dateFormatted() }}</abbr>
                     {!! $event->publicationLabel() !!}
                 </td>
                 </tr>

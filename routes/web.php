@@ -42,6 +42,8 @@ Route::prefix('dashboard')->group(function(){
     Route::put('edit-account', 'Backend\MainController@update')->name('edit.account');
 }); 
 
+//examples
+Route::get('/zoey', 'HomeController@zoey');
 
 // facebook socialite login
 Route::get('auth/{provider}', 'Auth\LoginController@redirectToProvider');

@@ -1,6 +1,6 @@
 @extends('layouts.backend')
 
-@section('title', 'IPumpEvnts | Dashboard')
+@section('title', 'IPumpEvents | Dashboard')
 
 @section('content')
      
@@ -21,7 +21,7 @@
             <div class="col-xs-12">
               <div class="box box-primary">
                 <!-- /.box-header -->
-                <div class="box-body ">
+                <div class="box-body">
                       <h3>Welcome to {{ config('app.name', 'Laravel') }}!</h3>
                       <p class="lead text-muted">Hallo {{ Auth::user()->name }}, Welcome to your Dashboard</p>
 

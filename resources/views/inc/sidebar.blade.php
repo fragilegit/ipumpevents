@@ -37,7 +37,7 @@
                 <ul class="popular-posts">
                     @foreach($popularEvents as $event)
                     <li>
-                        @if($event->image_thumb_url)
+                        @if($event->image_url)
                         <div class="post-image">
                             <a href="{{ route('events.show', $event->slug) }}">
                                 {{-- <img src="{{ $event->image_thumb_url }}" /> --}}

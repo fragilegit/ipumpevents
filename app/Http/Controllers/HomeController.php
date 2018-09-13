@@ -21,4 +21,9 @@ class HomeController extends Controller
         $events = Event::published()->orderBy('created_at','desc')->paginate($this->limit);
         return view('home')->with('events', $events);
     }
+
+    public function zoey(){
+        
+        return view('pages.zoey');
+    }
 }

@@ -69,6 +69,10 @@ nav{
     min-width: 100%;
     min-height: 100%;
 }
+.fullscreen-video-wrap img{
+    min-width: 100%;
+    min-height: 100%;
+}
 .header-overlay{
     height: 100vh;
     width: 100vw;
