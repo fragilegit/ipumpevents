@@ -1,14 +1,13 @@
 @extends('layouts.example')
 @section('title', 'Zoë | Pretty Lady')
 @section('content')
-    <header class="v-header container">
-        <div class="fullscreen-video-wrap">
-            <img src="https://images.pexels.com/photos/57905/pexels-photo-57905.jpeg?auto=compress&cs=tinysrgb&h=350" autoplay="true" loop="true" muted="true">
+    <header class="v-header">
+        <div class="fullscreen-image-wrap">
         </div>
         {{-- autoplay="" loop="" muted="" --}}
         <div class="header-overlay"></div>
-        <div class="header-content">
-            <h1>Hi Zoë</h1>
+        <div class="header-content text-center hide">
+            <h1 class="mb-3 text-white"><strong> Hi Zoë </strong></h1>
             <p class="lead">Girl, you all mine
                 Tryna lock you down, make you full time
                 People come and go, I hope you stay for good
@@ -19,7 +18,7 @@
                 I'd love to see your back in that backless dress
                 I'd love to see that mole when you lookin right
             </p>
-            <h3>#PrettyLady #MissUniverse #GoodVibes</h3>
+            <h3><b class="text-danger">#PrettyLady</b> <b>#MissUniverse</b> <b class="text-warning">#GoodVibes</b></h3>
         </div>
     </header>
 @endsection

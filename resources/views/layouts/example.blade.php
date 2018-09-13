@@ -15,31 +15,24 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet"> 
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('zoe/style.css') }}" rel="stylesheet">
     
     {{-- <link href="https://bootswatch.com/4/solar/bootstrap.min.css" rel="stylesheet"> --}}
 
-    <!-- Calenedar -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.css"/>
 </head>
 <body>
     <div class="preloader-background">
         <i class="fa fa-spinner fa-pulse fa-spin fa-4x fa-lg" color="#3F729B" aria-hidden="true"></i>
     </div>
     <div id="app">
-        {{-- @include('inc.navbar') --}}
-        {{-- <main class="py-4"> --}}
-        <main class="container">
+        <main class="container-fluid">
             @yield('content')
         </main>
     </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ URL::asset('js/script.js') }}"></script>
+    <script src="{{ URL::asset('zoe/script.js') }}"></script>
     <script src="http://code.jquery.com/jquery.js"></script>
-    <script>
-        @yield('pageScript')
-    </script>
 </body>
 </html>
