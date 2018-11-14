@@ -16,8 +16,8 @@ $(document).ready(function(){
     // $('.lead').fadeIn(effect);
 
     
-// var countDownDate = new Date("Nov 18, 2018 00:00:00").getTime();
-var birthday = new Date("Nov 13, 2018 22:15:00").getTime();
+// var birthday = new Date("Nov 18, 2018 00:00:00").getTime();
+var birthday = new Date("Nov 14, 2018 00:10:00").getTime();
 var birthHolder = $('#birthday');
 
 var x = setInterval(function() {
@@ -34,7 +34,7 @@ var x = setInterval(function() {
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    if(days > 0){
+    if(parseInt(days) > 0){
         
         birthHolder.html("<span class='text-warning'>"+days + "d</span> " + "<span class=''>" + hours + "h</span> " + 
         "<span class=''>" + minutes + "m</span> <span class='text-danger'>" + seconds + "s</span> ");
@@ -43,16 +43,16 @@ var x = setInterval(function() {
         birthHolder.html("<span class=''>" + hours + "h</span> " + 
         "<span class=''>" + minutes + "m</span> <span class='text-danger'>" + seconds + "s</span> ");
     }
-    if (parseInt(hours) <= 0){
+    if (parseInt(days) <= 0 && parseInt(hours) <= 0){
         birthHolder.html("<span class=''>" + minutes + "m</span> <span class='text-danger'>" + seconds + "s</span> ");
     }
-    if (parseInt(minutes) <= 0){
+    if (parseInt(days) <= 0 && parseInt(hours) <= 0 && parseInt(minutes) <= 0){
         birthHolder.html( "<span class='text-danger'>" + seconds + "s</span> ");
     }
     
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("birthday").innerHTML = "EXPIRED";
+    birthHolder.html("EXPIRED");
     $('h3').append('<br><b>#happybirthday</b>');
   }
 }, 1000);
