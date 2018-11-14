@@ -7,8 +7,8 @@
         {{-- autoplay="" loop="" muted="" --}}
         <div class="header-overlay"></div>
         <div class="header-content text-center hide">
-            <h1 class="mb-3 text-white"><strong> Hi Zoë </strong></h1>
-            <p class="lead">Girl, you all mine
+            <h1 class="mb-3 text-white hide"><strong> Hi Zoë </strong></h1>
+            <p class="lead display-3" id="birthday">Girl, you all mine
                 Tryna lock you down, make you full time
                 People come and go, I hope you stay for good
                 You the sunshine to my morning wood
@@ -20,5 +20,6 @@
             </p>
             <h3><b class="text-danger">#PrettyLady</b> <b>#MissUniverse</b> <b class="text-warning">#GoodVibes</b></h3>
         </div>
+        {{-- <div id="birthday"></div> --}}
     </header>
 @endsection
