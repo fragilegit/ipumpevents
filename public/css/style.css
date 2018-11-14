@@ -127,7 +127,6 @@ nav{
     height: 350px;
 }
 .card-columns{
-    
     @include media-breakpoint-only(sm) {
         column-count: 2;
     }

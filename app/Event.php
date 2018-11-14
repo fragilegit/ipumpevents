@@ -16,7 +16,7 @@ class Event extends Model
     protected $fillable = ['event_name', 'end_date', 'view_count', 'slug', 'description', 'event_image', 'lat', 'lng', 'excerpt', 'published_at', 'category_id'];
 
     public function user(){
-
+        
         return $this->belongsTo('App\User');
 
     }

@@ -34,7 +34,7 @@ class UsersController extends BackendController
 
     public function store(Requests\UserStoreRequest $request)
     {   
-        $request->except(['role']);
+        // $request->except(['role']);
         // $request->except(['slug']);
         $data = $request->except(['role']);
         

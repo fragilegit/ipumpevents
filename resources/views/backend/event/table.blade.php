@@ -4,7 +4,7 @@
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
-                <td width="80">Action</td>
+                <td width="100">Action</td>
                 <td>Title</td>
                 <td width="120">Author</td>
                 <td width="120">Category</td>
@@ -47,7 +47,7 @@
                     {{-- {!! $event->publicationLabel() !!} --}}
                 </td>
                 <td>
-                    <abbr title="{{ $event->dateFormatted(true) }}"> {{ $even->dateFormatted() }}</abbr>
+                    <abbr title="{{ $event->dateFormatted(true) }}"> {{ $event->dateFormatted() }}</abbr>
                     {!! $event->publicationLabel() !!}
                 </td>
                 </tr>
