@@ -16,8 +16,8 @@ $(document).ready(function(){
     // $('.lead').fadeIn(effect);
 
     
-// var birthday = new Date("Nov 18, 2018 00:00:00").getTime();
-var birthday = new Date("Nov 14, 2018 00:10:00").getTime();
+var birthday = new Date("Nov 18, 2018 00:00:00").getTime();
+
 var birthHolder = $('#birthday');
 
 var x = setInterval(function() {
