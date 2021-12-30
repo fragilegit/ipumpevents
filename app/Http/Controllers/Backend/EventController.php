@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Storage;
 use Validator;
 use App\Event;
 use Calendar;
+use Intervention\Image\Facades\Image;
 
 class EventController extends BackendController
 {
