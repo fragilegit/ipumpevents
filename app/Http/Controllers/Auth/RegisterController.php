@@ -72,7 +72,7 @@ class RegisterController extends Controller
         ]);
         
         $user->attachRole('author');
-        $user->sendVerificationEmail();
+        // $user->sendVerificationEmail();
 
         return $user;
     }
