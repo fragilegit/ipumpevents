@@ -38,7 +38,7 @@
             {!! Form::close() !!}
             </td>
             <td>{{ $event->event_name }}</td>
-            <td>{{ $event->user->name }}</td>
+            <td>@if(isset($event->user)){{ $event->user->name }}@endif</td>
             @if(isset($event->category->title))
             <td>{{ $event->category->title }}</td>
             @else

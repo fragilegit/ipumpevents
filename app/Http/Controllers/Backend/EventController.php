@@ -28,7 +28,6 @@ class EventController extends BackendController
 
         
         if($user->hasRole('admin')){
-        
             if(($status = $request->get('status')) && $status == 'trash'){
                
                 $events = Event::onlyTrashed()->with('category', 'user')->latest()->paginate($this->limit);
@@ -56,23 +55,22 @@ class EventController extends BackendController
             }else{
                 $events = Event::with('category', 'user')->latest()->paginate($this->limit);
                 $eventCount = Event::count();
-                
-                $eventsCal = Event::get();
-                $event_list = [];
-    
-                foreach($eventsCal as $key => $event){
-                    $event_list[] = Calendar::event(
-                        $event->event_name, 
-                        true, 
-                        new \DateTime($event->published_at),
-                        new \DateTime($event->published_at.' +1 day') 
-                    );
-                }
-                $calendar_details = Calendar::addEvents($event_list);
                 // dd($calendar_details->Calendar()->EventCollection->item);
             }
-        
-        $statusList = $this->statusListAdmin($request);
+            // $eventsCal = Event::get();
+            $event_list = [];
+
+            foreach($events as $key => $event){
+                $event_list[] = Calendar::event(
+                    $event->event_name, 
+                    true, 
+                    new \DateTime($event->published_at),
+                    new \DateTime($event->published_at.' +1 day') 
+                );
+            }
+
+            $calendar_details = Calendar::addEvents($event_list);
+            $statusList = $this->statusListAdmin($request);
         
         }// end if user is admin
         else{
